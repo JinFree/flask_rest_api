@@ -1,4 +1,3 @@
 flask
-flask-restx
 opencv-python
 numpy
