@@ -31,15 +31,10 @@ def get_image():
     return return_value(True, img)
 
 
-
-
-@app.route('/test', methods=['POST'])
-def test():
-    print(request.is_json)
-    params = request.get_json()
-    print(params)
-    return jsonify({'class_id': 0, 'class_name': 0})
-
+@app.route('/recv_images/<uuid>', methods=['POST'])
+def recv_images(uuid):
+    print("test", uuid)
+    return jsonify({'uuid': uuid})
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=8080)
